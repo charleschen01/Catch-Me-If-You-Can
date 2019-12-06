@@ -90,7 +90,7 @@ public class GameLogic : MonoBehaviour
         gameCount++;
 
         //game finishes after 10 rounds
-        if (gameCount > 5) {
+        if (gameCount > 10) {
             Debug.Log("Game Over");
             gameOverCanvas.enabled = true;
             timerCanvas.enabled = false;
