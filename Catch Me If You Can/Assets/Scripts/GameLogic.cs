@@ -6,7 +6,7 @@ public class GameLogic : MonoBehaviour
 {
 
     public static GameLogic Instance { get; set; }
-    public float timeLeft = 20;
+    public float timeLeft = 10;
     public int gameCount = 1;
     public int player1Score = 0;
     public int player2Score = 0;
@@ -30,7 +30,7 @@ public class GameLogic : MonoBehaviour
 
         //set player1 (catcher) speed to 20, player2 (runner) speed to 10
         player1.thrust = 20;
-        player2.thrust = 10;
+        player2.thrust = 15;
 
         //print debug statements
         Debug.Log("Round" + gameCount);
@@ -45,7 +45,7 @@ public class GameLogic : MonoBehaviour
     {
 
         //change time back to 10
-        timeLeft = 20;
+        timeLeft = 10;
 
         //increment gameCount
         gameCount++;
@@ -66,8 +66,8 @@ public class GameLogic : MonoBehaviour
         player2.goBackOrigin();
 
         //update the thrust: if catcher 20, if runner 10
-        player1.thrust = (player1role == Role.Chaser ? 20 : 10);
-        player2.thrust = (player2role == Role.Chaser ? 20 : 10);
+        player1.thrust = (player1role == Role.Chaser ? 20 : 15);
+        player2.thrust = (player2role == Role.Chaser ? 20 : 15);
 
         //print debug statements
         Debug.Log("Round" + gameCount);

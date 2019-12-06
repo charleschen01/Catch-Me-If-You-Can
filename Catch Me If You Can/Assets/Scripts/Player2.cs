@@ -2,7 +2,7 @@
 
 public class Player2 : MonoBehaviour
 {
-    public float thrust = 10.0f;
+    public float thrust = 15.0f;
     public Rigidbody rb;
 
     void Start()
