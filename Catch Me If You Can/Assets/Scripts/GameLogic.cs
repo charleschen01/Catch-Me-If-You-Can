@@ -18,7 +18,9 @@ public class GameLogic : MonoBehaviour
     public TextMeshProUGUI player1Canvas;
     public TextMeshProUGUI player2Canvas;
     public TextMeshProUGUI timerCanvas;
-    
+    public TextMeshProUGUI gameOverCanvas;
+    private Vector3 _runnerScale = new Vector3(2.5f, 2.5f, 0);
+    private Vector2 _chaserScale = new Vector3(4, 4, 0);
     // initialize player 1 as the chaser
     enum Role 
     {
@@ -28,12 +30,35 @@ public class GameLogic : MonoBehaviour
     Role player1role = Role.Chaser;
     Role player2role = Role.Runner;
 
+    bool updateCanvasEnabled = true;
+
     // awake() is called at the start after the game object has been instantiated
 
     void updateCanvas(){
-        player1Canvas.text = "Player1: "+player1Score; 
-        player2Canvas.text = "Player2: "+player2Score;
-        timerCanvas.text = ""+_timerValue;
+        if(updateCanvasEnabled){
+            player1Canvas.text = "Player1: "+player1Score; 
+            player2Canvas.text = "Player2: "+player2Score;
+            timerCanvas.text = ""+_timerValue;
+
+            if(player1role == Role.Chaser){
+                player1Canvas.transform.localScale = _chaserScale;
+                player2Canvas.transform.localScale = _runnerScale;
+            }
+            else{
+                player1Canvas.transform.localScale = _runnerScale;
+                player2Canvas.transform.localScale = _chaserScale;
+            }
+        }else{
+            if(player1Score>player2Score){
+                player1Canvas.transform.localScale = _chaserScale;
+                player2Canvas.transform.localScale = _runnerScale;
+            }
+            else{
+                player1Canvas.transform.localScale = _runnerScale;
+                player2Canvas.transform.localScale = _chaserScale;               
+            }
+        }
+        
     }
     void Awake()
     {
@@ -50,6 +75,8 @@ public class GameLogic : MonoBehaviour
         Debug.Log("Player2" + (player2role == Role.Chaser ? "Chaser" : "Runner"));
         Debug.Log("Player1Score" + player1Score);
         Debug.Log("Player2Score" + player2Score);
+
+        gameOverCanvas.enabled = false;
 	}
 
     // switch() is called whenever timer expires or collision happens
@@ -63,8 +90,12 @@ public class GameLogic : MonoBehaviour
         gameCount++;
 
         //game finishes after 10 rounds
-        if (gameCount > 10) {
+        if (gameCount > 5) {
             Debug.Log("Game Over");
+            gameOverCanvas.enabled = true;
+            timerCanvas.enabled = false;
+            updateCanvas();
+            updateCanvasEnabled = false;
             return;
         }
 
