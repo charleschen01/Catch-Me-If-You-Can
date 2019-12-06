@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-
 public class Player1 : MonoBehaviour
 {
     public float thrust = 10.0f;
@@ -24,7 +23,6 @@ public class Player1 : MonoBehaviour
         if(Input.GetKey(KeyCode.DownArrow)){
             rb.AddForce( Vector3.back * thrust);
         }
-        
     }
 }
 
