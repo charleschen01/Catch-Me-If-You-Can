@@ -2,7 +2,7 @@
 
 public class Player2 : MonoBehaviour
 {
-    public float thrust = 10.0f;
+    public float thrust = 15.0f;
     public Rigidbody rb;
 
     void Start()
@@ -25,5 +25,10 @@ public class Player2 : MonoBehaviour
             rb.AddForce( Vector3.back * thrust);
         }
         
+    }
+
+    public void goBackOrigin()
+    {
+        transform.position = new Vector3(9f,0.5f,9f);
     }
 }
