@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
+using TMPro;
 
 public class GameLogic : MonoBehaviour
 {
@@ -10,8 +12,12 @@ public class GameLogic : MonoBehaviour
     public int gameCount = 1;
     public int player1Score = 0;
     public int player2Score = 0;
+    private int _timerValue = 0;
     public Player1 player1;
     public Player2 player2;
+    public TextMeshProUGUI player1Canvas;
+    public TextMeshProUGUI player2Canvas;
+    public TextMeshProUGUI timerCanvas;
     
     // initialize player 1 as the chaser
     enum Role 
@@ -23,6 +29,12 @@ public class GameLogic : MonoBehaviour
     Role player2role = Role.Runner;
 
     // awake() is called at the start after the game object has been instantiated
+
+    void updateCanvas(){
+        player1Canvas.text = "Player1: "+player1Score; 
+        player2Canvas.text = "Player2: "+player2Score;
+        timerCanvas.text = ""+_timerValue;
+    }
     void Awake()
     {
         Debug.Assert(Instance == null);
@@ -87,6 +99,12 @@ public class GameLogic : MonoBehaviour
             else player2Score++;
             Switch();
 
+        }
+        
+        int currentTimer = (int) Math.Ceiling(timeLeft);
+        if(currentTimer!=_timerValue){
+            _timerValue = currentTimer;
+            updateCanvas();
         }
     }
 
