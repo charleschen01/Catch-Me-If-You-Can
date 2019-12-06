@@ -26,4 +26,9 @@ public class Player2 : MonoBehaviour
         }
         
     }
+
+    public void goBackOrigin()
+    {
+        transform.position = new Vector3(9f,0.5f,9f);
+    }
 }
