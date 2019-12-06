@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -712,7 +712,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -723,7 +723,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1609133109}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 9aee3b11d13597642a68577837b24974, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -800,6 +800,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b2701d975ccb47df88e29b44e4f9776, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thrust: 10
+  rb: {fileID: 0}
 --- !u!1 &1909655738
 GameObject:
   m_ObjectHideFlags: 0
@@ -844,7 +846,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1909655738}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 9aee3b11d13597642a68577837b24974, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -921,6 +923,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d49c099432f4d44fd850889a1e3bf65f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thrust: 5
+  rb: {fileID: 0}
 --- !u!1 &2110672531
 GameObject:
   m_ObjectHideFlags: 0
