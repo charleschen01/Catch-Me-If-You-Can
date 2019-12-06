@@ -1,27 +1,28 @@
 ﻿using UnityEngine;
- 
 public class Player1 : MonoBehaviour
 {
-    public float _speed = 200f;
+    public float thrust = 10.0f;
+    public Rigidbody rb;
 
-    public Vector3 _velocity = Vector3.forward;
-    public float _deltaAngle = 3f;
- 
-    void Update(){
-        // if(Input.GetKeyDown(KeyCode.RightArrow)){
-        //     _velocity = Quaternion.Euler(0, 0, _deltaAngle) * _velocity;
-        // }
-        // if(Input.GetKeyDown(KeyCode.LeftArrow)){
-        //     _velocity = Quaternion.Euler(0, 0, -_deltaAngle) * _velocity;
-        // }
-        // if(Input.GetKeyDown(KeyCode.UpArrow)){
-        //     transform.position += _velocity * Time.deltaTime;
-        // }
-        // if(Input.GetKeyDown(KeyCode.DownArrow)){
-        //     transform.position -= _velocity * Time.deltaTime;
-        // }
-        if (Input.GetKeyDown(KeyCode.Space)) {
-            transform.position += _speed * _velocity * Time.deltaTime;
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
+    void FixedUpdate()
+    {
+        if(Input.GetKey(KeyCode.RightArrow)){
+            rb.AddForce( Vector3.right * thrust );
+        }
+        if(Input.GetKey(KeyCode.LeftArrow)){
+            rb.AddForce( Vector3.left * thrust );
+        }
+        if(Input.GetKey(KeyCode.UpArrow)){
+            rb.AddForce( Vector3.forward * thrust );
+        }
+        if(Input.GetKey(KeyCode.DownArrow)){
+            rb.AddForce( Vector3.back * thrust);
         }
     }
 }
+
