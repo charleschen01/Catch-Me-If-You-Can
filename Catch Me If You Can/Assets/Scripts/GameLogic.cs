@@ -9,7 +9,12 @@ public class GameLogic : MonoBehaviour
     public float timeLeft = 10;
     public int gameCount = 0;
 
-     function Update()
+    public int player1Score = 0;
+    public 
+
+    void Switch()
+
+     void Update()
     {
         timeLeft -= Time.deltaTime;
         if ( timeLeft < 0 )
@@ -20,11 +25,17 @@ public class GameLogic : MonoBehaviour
                 Debug.Log("Game Over");
             }
         }
+
+
     }
     void Awake()
     {
         Debug.Assert(Instance == null);
         Instance = this;
 	}
+
+    void Hit(){
+
+    }
 	
 }
