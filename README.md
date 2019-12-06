@@ -1,6 +1,6 @@
 # Catch-Me-If-You-Can
 - *Catch Me If You Can* is a game designed and developed in Cambridge University Game Gig 2019. 
-- The game is developed using Unity. To run the game, load the project directory into Unity and run the game.
+- The game is developed using Unity. To run the game, simply load the project directory into Unity.
 
 ## Game Rules
 - This is a 2-player game. Each player controls one ball. The white ball is controlled using W,A,S,D and the brown ball is controlled using arrow buttons. 
