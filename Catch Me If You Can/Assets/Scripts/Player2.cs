@@ -1,18 +1,29 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Player2 : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public float thrust = 10.0f;
+    public Rigidbody rb;
+
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        if(Input.GetKey(KeyCode.D)){
+            rb.AddForce( Vector3.right * thrust );
+        }
+        if(Input.GetKey(KeyCode.A)){
+            rb.AddForce( Vector3.left * thrust );
+        }
+        if(Input.GetKey(KeyCode.W)){
+            rb.AddForce( Vector3.forward * thrust );
+        }
+        if(Input.GetKey(KeyCode.S)){
+            rb.AddForce( Vector3.back * thrust);
+        }
         
     }
 }
