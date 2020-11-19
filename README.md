@@ -11,3 +11,11 @@
 
 ![alt text](https://github.com/charleschen01/Catch-Me-If-You-Can/blob/master/Game%20Scene.png)
 
+## Content
+All codes reside in the folder *Catch-Me-If-You-Can/Catch Me If You Can/Assets/Scripts*:
+- ***GameLogic.cs***: the main script controlling the game lifecycle
+
+- ***Player1.cs***, ***Player2.cs***: enable players to control the movements of two balls using keyboard
+
+- ***MovingCapsule.cs***, ***MovingTile.cs***, ***RotatingBar.cs***: set up moving objects in the game scene
+
