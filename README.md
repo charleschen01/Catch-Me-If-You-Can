@@ -13,7 +13,7 @@
 
 ## Content
 All codes reside in the folder *Catch-Me-If-You-Can/Catch Me If You Can/Assets/Scripts*:
-- ***GameLogic.cs***: the main script controlling the game lifecycle
+- ***GameLogic.cs***: the main script controlling the game lifecycle and the score display
 
 - ***Player1.cs***, ***Player2.cs***: enable players to control the movements of two balls using keyboard
 
